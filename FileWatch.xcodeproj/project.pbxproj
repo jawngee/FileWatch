@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFBAF74C20AD6BB2006895BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBAF74720AD6BB2006895BB /* Assets.xcassets */; };
+		FFBAF74D20AD6BB2006895BB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBAF74820AD6BB2006895BB /* MainMenu.xib */; };
+		FFBAF75520AD6BC6006895BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF75320AD6BC6006895BB /* main.m */; };
+		FFBAF75920AD6C38006895BB /* FWItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF75820AD6C38006895BB /* FWItemManager.m */; };
+		FFBAF75C20AD6C41006895BB /* FWItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF75B20AD6C41006895BB /* FWItem.m */; };
+		FFBAF76020AD7A79006895BB /* VDKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF75E20AD7A79006895BB /* VDKQueue.m */; };
+		FFBAF76420AD7B36006895BB /* NSDictionary+ILAB.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76220AD7B36006895BB /* NSDictionary+ILAB.m */; };
+		FFBAF76B20AD8098006895BB /* FWScriptRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76A20AD8098006895BB /* FWScriptRunner.m */; };
+		FFBAF77020AD8BCB006895BB /* FWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FFBAF73020AD6945006895BB /* FileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFBAF74720AD6BB2006895BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFBAF74920AD6BB2006895BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FFBAF74A20AD6BB2006895BB /* FileWatch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = FileWatch.entitlements; sourceTree = "<group>"; };
+		FFBAF74B20AD6BB2006895BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFBAF75120AD6BC6006895BB /* FWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWAppDelegate.h; sourceTree = "<group>"; };
+		FFBAF75320AD6BC6006895BB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFBAF75720AD6C38006895BB /* FWItemManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWItemManager.h; sourceTree = "<group>"; };
+		FFBAF75820AD6C38006895BB /* FWItemManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWItemManager.m; sourceTree = "<group>"; };
+		FFBAF75A20AD6C41006895BB /* FWItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWItem.h; sourceTree = "<group>"; };
+		FFBAF75B20AD6C41006895BB /* FWItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWItem.m; sourceTree = "<group>"; };
+		FFBAF75E20AD7A79006895BB /* VDKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDKQueue.m; sourceTree = "<group>"; };
+		FFBAF75F20AD7A79006895BB /* VDKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDKQueue.h; sourceTree = "<group>"; };
+		FFBAF76220AD7B36006895BB /* NSDictionary+ILAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ILAB.m"; sourceTree = "<group>"; };
+		FFBAF76320AD7B36006895BB /* NSDictionary+ILAB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ILAB.h"; sourceTree = "<group>"; };
+		FFBAF76920AD8098006895BB /* FWScriptRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWScriptRunner.h; sourceTree = "<group>"; };
+		FFBAF76A20AD8098006895BB /* FWScriptRunner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWScriptRunner.m; sourceTree = "<group>"; };
+		FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFBAF72D20AD6945006895BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFBAF72720AD6945006895BB = {
+			isa = PBXGroup;
+			children = (
+				FFBAF74F20AD6BC6006895BB /* Source */,
+				FFBAF74620AD6BB2006895BB /* Resources */,
+				FFBAF73120AD6945006895BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFBAF73120AD6945006895BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF73020AD6945006895BB /* FileWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFBAF74620AD6BB2006895BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF74720AD6BB2006895BB /* Assets.xcassets */,
+				FFBAF74820AD6BB2006895BB /* MainMenu.xib */,
+				FFBAF74A20AD6BB2006895BB /* FileWatch.entitlements */,
+				FFBAF74B20AD6BB2006895BB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFBAF74F20AD6BC6006895BB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF75020AD6BC6006895BB /* App */,
+				FFBAF76520AD7EFF006895BB /* Classes */,
+				FFBAF76120AD7A9D006895BB /* Categories */,
+				FFBAF75620AD6C15006895BB /* Model */,
+				FFBAF75D20AD7A56006895BB /* External */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FFBAF75020AD6BC6006895BB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF75320AD6BC6006895BB /* main.m */,
+				FFBAF75120AD6BC6006895BB /* FWAppDelegate.h */,
+				FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FFBAF75620AD6C15006895BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF75720AD6C38006895BB /* FWItemManager.h */,
+				FFBAF75820AD6C38006895BB /* FWItemManager.m */,
+				FFBAF75A20AD6C41006895BB /* FWItem.h */,
+				FFBAF75B20AD6C41006895BB /* FWItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFBAF75D20AD7A56006895BB /* External */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF75F20AD7A79006895BB /* VDKQueue.h */,
+				FFBAF75E20AD7A79006895BB /* VDKQueue.m */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		FFBAF76120AD7A9D006895BB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF76320AD7B36006895BB /* NSDictionary+ILAB.h */,
+				FFBAF76220AD7B36006895BB /* NSDictionary+ILAB.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FFBAF76520AD7EFF006895BB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF76920AD8098006895BB /* FWScriptRunner.h */,
+				FFBAF76A20AD8098006895BB /* FWScriptRunner.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFBAF72F20AD6945006895BB /* FileWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFBAF74120AD6945006895BB /* Build configuration list for PBXNativeTarget "FileWatch" */;
+			buildPhases = (
+				FFBAF72C20AD6945006895BB /* Sources */,
+				FFBAF72D20AD6945006895BB /* Frameworks */,
+				FFBAF72E20AD6945006895BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FileWatch;
+			productName = FileWatch;
+			productReference = FFBAF73020AD6945006895BB /* FileWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFBAF72820AD6945006895BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FW;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jon Gilkison";
+				TargetAttributes = {
+					FFBAF72F20AD6945006895BB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = FFBAF72B20AD6945006895BB /* Build configuration list for PBXProject "FileWatch" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFBAF72720AD6945006895BB;
+			productRefGroup = FFBAF73120AD6945006895BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFBAF72F20AD6945006895BB /* FileWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFBAF72E20AD6945006895BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBAF74C20AD6BB2006895BB /* Assets.xcassets in Resources */,
+				FFBAF74D20AD6BB2006895BB /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFBAF72C20AD6945006895BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBAF75520AD6BC6006895BB /* main.m in Sources */,
+				FFBAF75920AD6C38006895BB /* FWItemManager.m in Sources */,
+				FFBAF76B20AD8098006895BB /* FWScriptRunner.m in Sources */,
+				FFBAF76420AD7B36006895BB /* NSDictionary+ILAB.m in Sources */,
+				FFBAF77020AD8BCB006895BB /* FWAppDelegate.m in Sources */,
+				FFBAF75C20AD6C41006895BB /* FWItem.m in Sources */,
+				FFBAF76020AD7A79006895BB /* VDKQueue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFBAF74820AD6BB2006895BB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBAF74920AD6BB2006895BB /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFBAF73F20AD6945006895BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FFBAF74020AD6945006895BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FFBAF74220AD6945006895BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4VS8SA23V9;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interfacelab.FileWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FFBAF74320AD6945006895BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4VS8SA23V9;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.interfacelab.FileWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFBAF72B20AD6945006895BB /* Build configuration list for PBXProject "FileWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBAF73F20AD6945006895BB /* Debug */,
+				FFBAF74020AD6945006895BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFBAF74120AD6945006895BB /* Build configuration list for PBXNativeTarget "FileWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBAF74220AD6945006895BB /* Debug */,
+				FFBAF74320AD6945006895BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFBAF72820AD6945006895BB /* Project object */;
+}
