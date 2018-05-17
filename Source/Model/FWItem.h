@@ -19,10 +19,12 @@
 
 @property (assign, nonatomic) BOOL enabled;         ///< Determines if this item is enabled
 @property (readonly) BOOL watch;                    ///< Determines if this item should be watched
+@property (readonly) BOOL runInTerminal;            ///< Runs the script in a terminal, instead of using NSTask
 
 @property (nullable, readonly) NSString *title;     ///< Title of the item
 @property (nullable, readonly) NSString *source;    ///< Source file to watch
 @property (nullable, readonly) NSString *script;    ///< Script to run when item is changed
+@property (nonnull, readonly) NSArray<FWItem *> *items;     ///< Items to watch
 
 @property (nullable, strong, nonatomic) id<NSObject> objTag;    ///< Object tag
 

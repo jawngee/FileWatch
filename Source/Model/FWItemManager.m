@@ -7,6 +7,7 @@
 //
 
 #import "FWItemManager.h"
+#import "NSDictionary+ILAB.h"
 #import "VDKQueue.h"
 
 @interface FWItemManager()<VDKQueueDelegate, FWItemDelegate> {
@@ -46,18 +47,28 @@
         [NSFileManager.defaultManager createDirectoryAtPath:itemsDataURL.URLByDeletingLastPathComponent.path withIntermediateDirectories:YES attributes:nil error:nil];
     } else {
         NSData *data = [NSData dataWithContentsOfURL:itemsDataURL];
-        NSArray<NSDictionary *> *itemsData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        if (data) {
+        NSDictionary *configJSONData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        if (configJSONData && [configJSONData isKindOfClass:NSDictionary.class]) {
+            NSArray<NSDictionary *> *itemsData = [configJSONData getModelArray:@"items" default:@[]];
             for(NSDictionary *itemData in itemsData) {
                 FWItem *item = [[FWItem alloc] initWithData:itemData baseURL:itemsDataURL.URLByDeletingLastPathComponent];
-                item.delegate = self;
-                if (item.watch && item.enabled) {
-                    [queue addPath:item.source];
-                }
-                
                 [items addObject:item];
             }
         }
+        
+        [self processItems:items];
+    }
+}
+
+-(void)processItems:(NSArray<FWItem *> *)itemsToProcess {
+    for(FWItem *item in itemsToProcess) {
+        item.delegate = self;
+        if (item.watch && item.enabled) {
+            [queue addPath:item.source];
+        }
+        
+        [self processItems:item.items];
     }
 }
 

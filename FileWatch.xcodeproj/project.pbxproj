@@ -16,6 +16,7 @@
 		FFBAF76420AD7B36006895BB /* NSDictionary+ILAB.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76220AD7B36006895BB /* NSDictionary+ILAB.m */; };
 		FFBAF76B20AD8098006895BB /* FWScriptRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76A20AD8098006895BB /* FWScriptRunner.m */; };
 		FFBAF77020AD8BCB006895BB /* FWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */; };
+		FFBAF77320ADEDB1006895BB /* NSMenuItem+FWItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF77220ADEDB1006895BB /* NSMenuItem+FWItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		FFBAF76920AD8098006895BB /* FWScriptRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWScriptRunner.h; sourceTree = "<group>"; };
 		FFBAF76A20AD8098006895BB /* FWScriptRunner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWScriptRunner.m; sourceTree = "<group>"; };
 		FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAppDelegate.m; sourceTree = "<group>"; };
+		FFBAF77120ADEDB1006895BB /* NSMenuItem+FWItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMenuItem+FWItem.h"; sourceTree = "<group>"; };
+		FFBAF77220ADEDB1006895BB /* NSMenuItem+FWItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMenuItem+FWItem.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 			children = (
 				FFBAF76320AD7B36006895BB /* NSDictionary+ILAB.h */,
 				FFBAF76220AD7B36006895BB /* NSDictionary+ILAB.m */,
+				FFBAF77120ADEDB1006895BB /* NSMenuItem+FWItem.h */,
+				FFBAF77220ADEDB1006895BB /* NSMenuItem+FWItem.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			files = (
 				FFBAF75520AD6BC6006895BB /* main.m in Sources */,
 				FFBAF75920AD6C38006895BB /* FWItemManager.m in Sources */,
+				FFBAF77320ADEDB1006895BB /* NSMenuItem+FWItem.m in Sources */,
 				FFBAF76B20AD8098006895BB /* FWScriptRunner.m in Sources */,
 				FFBAF76420AD7B36006895BB /* NSDictionary+ILAB.m in Sources */,
 				FFBAF77020AD8BCB006895BB /* FWAppDelegate.m in Sources */,

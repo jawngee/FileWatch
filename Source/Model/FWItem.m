@@ -6,11 +6,13 @@
 //  Copyright © 2018 Jon Gilkison. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
 #import "FWItem.h"
 #import "NSDictionary+ILAB.h"
 #import "FWScriptRunner.h"
 
 @interface FWItem()<FWScriptRunnerDelegate> {
+    NSMutableArray<FWItem *> *items;
     FWScriptRunner *scriptRunner;
     NSString *scriptPath;
 }
@@ -18,16 +20,28 @@
 
 @implementation FWItem
 
+@synthesize items = items;
+
 #pragma mark - Initialization
 
 -(instancetype)initWithData:(NSDictionary *)data baseURL:(NSURL *)baseURL {
     if ((self = [super init])) {
+        items = [NSMutableArray new];
+        
         _title = [data getModelString:@"title" default:nil];
         _source = [data getModelString:@"source" default:nil];
         scriptPath = _script = [data getModelString:@"script" default:nil];
         _enabled = [data getModelBool:@"enabled" default:YES];
+        _runInTerminal = [data getModelBool:@"terminal" default:NO];
 
         _watch = ((_source != nil) && [NSFileManager.defaultManager fileExistsAtPath:_source]);
+
+        if (_enabled) {
+            NSArray<NSDictionary *> *itemsData = [data getModelArray:@"items" default:@[]];
+            for(NSDictionary *itemData in itemsData) {
+                [items addObject:[[FWItem alloc] initWithData:itemData baseURL:baseURL]];
+            }
+        }
 
         if (_enabled && scriptPath) {
             _enabled = [NSFileManager.defaultManager fileExistsAtPath:scriptPath];
@@ -63,8 +77,15 @@
         return;
     }
     
-    scriptRunner = [[FWScriptRunner alloc] initWithScript:scriptPath delegate:self];
-    [scriptRunner run];
+    if (_runInTerminal) {
+        NSTask *task = [NSTask new];
+        task.launchPath = @"/usr/bin/open";
+        task.arguments = @[@"-b", @"com.googlecode.iterm2", scriptPath];
+        [task launch];
+    } else {
+        scriptRunner = [[FWScriptRunner alloc] initWithScript:scriptPath delegate:self];
+        [scriptRunner run];
+    }
 }
 
 #pragma mark - FWScriptRunnerDelegate
