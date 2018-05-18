@@ -1,4 +1,4 @@
-#FileWatch
+# FileWatch
 
 FileWatch is a simple macOS menubar app that allows you to:
 
