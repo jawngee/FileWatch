@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "title": "Sample Submenu",
+      "enabled": true,
+      "items": [
+        {
+          "title": "Sample Watcher - iTerm",
+          "source": "~/.filewatch/sample-1.txt",
+          "script": "scripts/sample-script-1.sh",
+          "enabled": true,
+          "terminal": true,
+          "hotkey": {
+            "shift": true,
+            "control": true,
+            "option": true,
+            "command": true,
+            "function": false,
+            "key": "up"
+          }
+        },
+        {
+          "title": "Sample Watcher",
+          "source": "~/.filewatch/sample-2.txt",
+          "script": "scripts/sample-script-2.sh",
+          "enabled": true,
+          "terminal": false
+        }
+      ]
+    },
+    {
+      "title": "-"
+    },
+    {
+      "title": "Open Google URL",
+      "url": "https://google.com",
+      "enabled": true
+    }
+  ]
+}

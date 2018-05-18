@@ -17,6 +17,13 @@
 		FFBAF76B20AD8098006895BB /* FWScriptRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76A20AD8098006895BB /* FWScriptRunner.m */; };
 		FFBAF77020AD8BCB006895BB /* FWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */; };
 		FFBAF77320ADEDB1006895BB /* NSMenuItem+FWItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAF77220ADEDB1006895BB /* NSMenuItem+FWItem.m */; };
+		FFDE795620AE005800505485 /* FWHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDE795520AE005800505485 /* FWHotKey.m */; };
+		FFDE796120AE043300505485 /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDE795E20AE043300505485 /* DDHotKeyUtilities.m */; };
+		FFDE796220AE043300505485 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDE795F20AE043300505485 /* DDHotKeyCenter.m */; };
+		FFDE796520AE044100505485 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDE796420AE044100505485 /* Carbon.framework */; };
+		FFDE796820AECCBF00505485 /* sample-config.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDE796720AECCBF00505485 /* sample-config.json */; };
+		FFDE796C20AECECC00505485 /* sample-script-2.sh in Resources */ = {isa = PBXBuildFile; fileRef = FFDE796A20AECECC00505485 /* sample-script-2.sh */; };
+		FFDE796D20AECECC00505485 /* sample-script-1.sh in Resources */ = {isa = PBXBuildFile; fileRef = FFDE796B20AECECC00505485 /* sample-script-1.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,16 @@
 		FFBAF76F20AD8BCB006895BB /* FWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAppDelegate.m; sourceTree = "<group>"; };
 		FFBAF77120ADEDB1006895BB /* NSMenuItem+FWItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMenuItem+FWItem.h"; sourceTree = "<group>"; };
 		FFBAF77220ADEDB1006895BB /* NSMenuItem+FWItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMenuItem+FWItem.m"; sourceTree = "<group>"; };
+		FFDE795420AE005800505485 /* FWHotKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWHotKey.h; sourceTree = "<group>"; };
+		FFDE795520AE005800505485 /* FWHotKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWHotKey.m; sourceTree = "<group>"; };
+		FFDE795D20AE043300505485 /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
+		FFDE795E20AE043300505485 /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
+		FFDE795F20AE043300505485 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
+		FFDE796020AE043300505485 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
+		FFDE796420AE044100505485 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		FFDE796720AECCBF00505485 /* sample-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sample-config.json"; sourceTree = "<group>"; };
+		FFDE796A20AECECC00505485 /* sample-script-2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "sample-script-2.sh"; sourceTree = "<group>"; };
+		FFDE796B20AECECC00505485 /* sample-script-1.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "sample-script-1.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDE796520AE044100505485 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +77,7 @@
 				FFBAF74F20AD6BC6006895BB /* Source */,
 				FFBAF74620AD6BB2006895BB /* Resources */,
 				FFBAF73120AD6945006895BB /* Products */,
+				FFDE796320AE044000505485 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +92,7 @@
 		FFBAF74620AD6BB2006895BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE796620AECC4900505485 /* Sample */,
 				FFBAF74720AD6BB2006895BB /* Assets.xcassets */,
 				FFBAF74820AD6BB2006895BB /* MainMenu.xib */,
 				FFBAF74A20AD6BB2006895BB /* FileWatch.entitlements */,
@@ -110,6 +130,8 @@
 				FFBAF75820AD6C38006895BB /* FWItemManager.m */,
 				FFBAF75A20AD6C41006895BB /* FWItem.h */,
 				FFBAF75B20AD6C41006895BB /* FWItem.m */,
+				FFDE795420AE005800505485 /* FWHotKey.h */,
+				FFDE795520AE005800505485 /* FWHotKey.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,8 +139,8 @@
 		FFBAF75D20AD7A56006895BB /* External */ = {
 			isa = PBXGroup;
 			children = (
-				FFBAF75F20AD7A79006895BB /* VDKQueue.h */,
-				FFBAF75E20AD7A79006895BB /* VDKQueue.m */,
+				FFDE795820AE032600505485 /* DDHotKey */,
+				FFDE795720AE031A00505485 /* VDKQueue */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -141,6 +163,52 @@
 				FFBAF76A20AD8098006895BB /* FWScriptRunner.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		FFDE795720AE031A00505485 /* VDKQueue */ = {
+			isa = PBXGroup;
+			children = (
+				FFBAF75F20AD7A79006895BB /* VDKQueue.h */,
+				FFBAF75E20AD7A79006895BB /* VDKQueue.m */,
+			);
+			path = VDKQueue;
+			sourceTree = "<group>";
+		};
+		FFDE795820AE032600505485 /* DDHotKey */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE796020AE043300505485 /* DDHotKeyCenter.h */,
+				FFDE795F20AE043300505485 /* DDHotKeyCenter.m */,
+				FFDE795D20AE043300505485 /* DDHotKeyUtilities.h */,
+				FFDE795E20AE043300505485 /* DDHotKeyUtilities.m */,
+			);
+			path = DDHotKey;
+			sourceTree = "<group>";
+		};
+		FFDE796320AE044000505485 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE796420AE044100505485 /* Carbon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFDE796620AECC4900505485 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE796920AECD7400505485 /* Scripts */,
+				FFDE796720AECCBF00505485 /* sample-config.json */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		FFDE796920AECD7400505485 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE796B20AECECC00505485 /* sample-script-1.sh */,
+				FFDE796A20AECECC00505485 /* sample-script-2.sh */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBAF74C20AD6BB2006895BB /* Assets.xcassets in Resources */,
+				FFDE796D20AECECC00505485 /* sample-script-1.sh in Resources */,
+				FFDE796820AECCBF00505485 /* sample-config.json in Resources */,
+				FFDE796C20AECECC00505485 /* sample-script-2.sh in Resources */,
 				FFBAF74D20AD6BB2006895BB /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,11 +292,14 @@
 			files = (
 				FFBAF75520AD6BC6006895BB /* main.m in Sources */,
 				FFBAF75920AD6C38006895BB /* FWItemManager.m in Sources */,
+				FFDE796120AE043300505485 /* DDHotKeyUtilities.m in Sources */,
 				FFBAF77320ADEDB1006895BB /* NSMenuItem+FWItem.m in Sources */,
 				FFBAF76B20AD8098006895BB /* FWScriptRunner.m in Sources */,
+				FFDE795620AE005800505485 /* FWHotKey.m in Sources */,
 				FFBAF76420AD7B36006895BB /* NSDictionary+ILAB.m in Sources */,
 				FFBAF77020AD8BCB006895BB /* FWAppDelegate.m in Sources */,
 				FFBAF75C20AD6C41006895BB /* FWItem.m in Sources */,
+				FFDE796220AE043300505485 /* DDHotKeyCenter.m in Sources */,
 				FFBAF76020AD7A79006895BB /* VDKQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

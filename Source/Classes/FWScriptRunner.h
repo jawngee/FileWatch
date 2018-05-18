@@ -33,7 +33,9 @@ typedef enum : NSUInteger {
  @param runnerDelegate The delegate
  @return The new instance
  */
--(nonnull instancetype)initWithScript:(nonnull NSString *)scriptPath delegate:(nullable id<FWScriptRunnerDelegate>)runnerDelegate;
+-(nonnull instancetype)initWithScript:(nonnull NSString *)scriptPath
+                                 args:(nullable NSArray<NSString *> *)args
+                             delegate:(nullable id<FWScriptRunnerDelegate>)runnerDelegate;
 
 /**
  Runs the script

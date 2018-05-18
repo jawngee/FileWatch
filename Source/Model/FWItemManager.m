@@ -28,7 +28,7 @@
         queue = [[VDKQueue alloc] init];
         queue.delegate = self;
         
-        [self reload];
+        _loaded = [self reload];
     }
     
     return self;
@@ -36,29 +36,38 @@
 
 #pragma mark - Item Management
 
--(void)reload {
-    [queue removeAllPaths];
-    items = [NSMutableArray new];
-    
+-(BOOL)reload {
     NSString *homeDir = NSHomeDirectory();
     itemsDataURL = [[NSURL fileURLWithPath:homeDir] URLByAppendingPathComponent:@".filewatch/config.json"];
     
-    if (![NSFileManager.defaultManager fileExistsAtPath:itemsDataURL.path]) {
-        [NSFileManager.defaultManager createDirectoryAtPath:itemsDataURL.URLByDeletingLastPathComponent.path withIntermediateDirectories:YES attributes:nil error:nil];
-    } else {
+    if ([NSFileManager.defaultManager fileExistsAtPath:itemsDataURL.path]) {
         NSData *data = [NSData dataWithContentsOfURL:itemsDataURL];
         NSDictionary *configJSONData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
+        BOOL processedItems = NO;
         if (configJSONData && [configJSONData isKindOfClass:NSDictionary.class]) {
+            [queue removeAllPaths];
+            items = [NSMutableArray new];
+
             NSArray<NSDictionary *> *itemsData = [configJSONData getModelArray:@"items" default:@[]];
             for(NSDictionary *itemData in itemsData) {
                 FWItem *item = [[FWItem alloc] initWithData:itemData baseURL:itemsDataURL.URLByDeletingLastPathComponent];
                 [items addObject:item];
             }
+
+            [self processItems:items];
+            
+            processedItems = YES;
         }
         
-        [self processItems:items];
+        [queue addPath:itemsDataURL.path];
+        
+        _loaded = processedItems;
+        
+        return processedItems;
     }
+    
+    return NO;
 }
 
 -(void)processItems:(NSArray<FWItem *> *)itemsToProcess {
@@ -85,10 +94,15 @@
     }
     
     if (shouldRun) {
-        for(FWItem *item in items) {
-            if ([item.source isEqualToString:fpath]) {
-                [item run];
-                break;
+        if ([itemsDataURL.path isEqualToString:fpath]) {
+            if ([self reload] && _delegate) {
+                [_delegate itemManagerReloaded:self];
+            }
+        } else {
+            for(FWItem *item in items) {
+                if ([item runIfMatches:fpath]) {
+                    break;
+                }
             }
         }
     }

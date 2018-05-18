@@ -29,11 +29,13 @@
         items = [NSMutableArray new];
         
         _title = [data getModelString:@"title" default:nil];
-        _source = [data getModelString:@"source" default:nil];
-        scriptPath = _script = [data getModelString:@"script" default:nil];
+        _source = [[data getModelString:@"source" default:nil] stringByExpandingTildeInPath];
+        scriptPath = _script = [[data getModelString:@"script" default:nil] stringByExpandingTildeInPath];
         _enabled = [data getModelBool:@"enabled" default:YES];
         _runInTerminal = [data getModelBool:@"terminal" default:NO];
-
+        _args = [data getModelArray:@"args" default:nil];
+        _url = [data getModelURL:@"url" default:nil];
+        
         _watch = ((_source != nil) && [NSFileManager.defaultManager fileExistsAtPath:_source]);
 
         if (_enabled) {
@@ -50,23 +52,33 @@
                 _enabled = [NSFileManager.defaultManager fileExistsAtPath:scriptPath];
             }
         }
+        
+        NSDictionary *hotkeyData = [data getModelDictionary:@"hotkey" default:nil];
+        if (hotkeyData && [hotkeyData isKindOfClass:NSDictionary.class]) {
+            _hotKey = [[FWHotKey alloc] initWithData:hotkeyData];
+        }
     }
     
     return self;
 }
 
-#pragma mark - Model Data
-
--(NSDictionary *)modelData {
-    return @{
-             @"title": _title ?: NSNull.null,
-             @"source": _source ?: NSNull.null,
-             @"script": _script ?: NSNull.null,
-             @"enabled": @(_enabled)
-             };
-}
-
 #pragma mark - Running Scripts
+
+-(BOOL)runIfMatches:(nonnull NSString *)source {
+    if ([_source isEqualToString:source]) {
+        [self run];
+        
+        return YES;
+    }
+    
+    for(FWItem *item in items) {
+        if ([item runIfMatches:source]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
 
 -(void)run {
     if (scriptRunner && (scriptRunner.status == FWScriptRunnerRunning)) {
@@ -77,15 +89,21 @@
         return;
     }
     
-    if (_runInTerminal) {
+    if (_url) {
+        [NSWorkspace.sharedWorkspace openURL:_url];
+    } else if (_runInTerminal) {
         NSTask *task = [NSTask new];
         task.launchPath = @"/usr/bin/open";
         task.arguments = @[@"-b", @"com.googlecode.iterm2", scriptPath];
         [task launch];
-    } else {
-        scriptRunner = [[FWScriptRunner alloc] initWithScript:scriptPath delegate:self];
+    } else if (scriptPath) {
+        scriptRunner = [[FWScriptRunner alloc] initWithScript:scriptPath args:_args delegate:self];
         [scriptRunner run];
     }
+}
+
+-(void)hotkey:(id _Nullable)sender {
+    [self run];
 }
 
 #pragma mark - FWScriptRunnerDelegate

@@ -10,13 +10,15 @@
 
 @interface FWScriptRunner() {
     NSTask *task;
+    NSArray<NSString *> *arguments;
 }
 @end
 
 @implementation FWScriptRunner
 
--(nonnull instancetype)initWithScript:(nonnull NSString *)scriptPath delegate:(nullable id<FWScriptRunnerDelegate>)runnerDelegate {
+-(nonnull instancetype)initWithScript:(nonnull NSString *)scriptPath args:(NSArray<NSString *> *)args delegate:(nullable id<FWScriptRunnerDelegate>)runnerDelegate {
     if (self = [super init]) {
+        arguments = args;
         _status = FWScriptRunnerNotRun;
         _script = scriptPath;
         _delegate = runnerDelegate;
@@ -38,8 +40,10 @@
     
     task = [[NSTask alloc] init];
     task.launchPath = _script;
+    if (arguments && (arguments.count > 0)) {
+        task.arguments = arguments;
+    }
     task.environment = NSProcessInfo.processInfo.environment;
-    NSLog(@"%@", task.environment);
     task.standardInput = [[NSPipe alloc] init];
     task.standardOutput = [[NSPipe alloc] init];
     task.standardError = [[NSPipe alloc] init];

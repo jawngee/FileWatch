@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FWHotKey.h"
 
 @protocol FWItemDelegate;
 
@@ -21,10 +22,13 @@
 @property (readonly) BOOL watch;                    ///< Determines if this item should be watched
 @property (readonly) BOOL runInTerminal;            ///< Runs the script in a terminal, instead of using NSTask
 
-@property (nullable, readonly) NSString *title;     ///< Title of the item
-@property (nullable, readonly) NSString *source;    ///< Source file to watch
-@property (nullable, readonly) NSString *script;    ///< Script to run when item is changed
+@property (nullable, readonly) NSString *title;             ///< Title of the item
+@property (nullable, readonly) NSString *source;            ///< Source file to watch
+@property (nullable, readonly) NSString *script;            ///< Script to run when item is changed
+@property (nullable, readonly) NSArray<NSString *> *args;   ///< Additional arguments to be passed to the script
+@property (nullable, readonly) NSURL *url;                  ///< External URL to launch
 @property (nonnull, readonly) NSArray<FWItem *> *items;     ///< Items to watch
+@property (nullable, readonly) FWHotKey *hotKey;            ///< Hotkey for this item, if any.
 
 @property (nullable, strong, nonatomic) id<NSObject> objTag;    ///< Object tag
 
@@ -37,17 +41,26 @@
  */
 -(nonnull instancetype)initWithData:(nonnull NSDictionary *)data baseURL:(nonnull NSURL *)baseURL;
 
-/**
- Returns this model's data as a NSDictionary for serializing
 
- @return NSDictionary containing values to serialize
+/**
+ Asks the item to run it's script if it matches the supplied source
+
+ @param source The path of the source file to match against
+ @return YES if this item, or it's children, match
  */
--(nonnull NSDictionary *)modelData;
+-(BOOL)runIfMatches:(nonnull NSString *)source;
 
 /**
  Executes the item's script
  */
 -(void)run;
+
+/**
+ Triggered by this item's hotkey
+ 
+ @param sender The sender
+ */
+-(void)hotkey:(id _Nullable)sender;
 
 @end
 
@@ -71,5 +84,6 @@
  @param exitCode The exit code of the script
  */
 -(void)itemScriptFinished:(nonnull FWItem *)item exitCode:(NSInteger)exitCode;
+
 
 @end
